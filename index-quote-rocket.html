@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Smarty - Multipurpose + Admin</title>
+		<meta name="description" content="" />
+		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+		<!-- WEB FONTS : use %7C instead of | (pipe) -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
+
+		<!-- CORE CSS -->
+		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- REVOLUTION SLIDER -->
+		<link href="assets/plugins/slider.revolution/css/extralayers.css" rel="stylesheet" type="text/css" />
+		<link href="assets/plugins/slider.revolution/css/settings.css" rel="stylesheet" type="text/css" />
+
+		<!-- THEME CSS -->
+		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+
+		<!-- PAGE LEVEL SCRIPTS -->
+		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/color_scheme/darkblue.css" rel="stylesheet" type="text/css" id="color_scheme" />
+		<link href="assets/css/custom-forms-v2.css" rel="stylesheet" type="text/css" />
+
+		
+		<script lang="javascript">
+			function inputs(value) {
+				var values = [
+					"residentiel",
+					"commercial",
+					"corporatif",
+					"hybride"
+				];
+				if (value === "empty") {
+					for (i in values) {
+						document.getElementById(values[i]).style.display = "none";
+						document.getElementById(values[i] + "Div").style.display = "none";
+					}
+				} else {
+					for (i in values) {
+						if (values[i] === value) continue;
+						document.getElementById(values[i]).style.display = "none";
+						document.getElementById(values[i] + "Div").style.display = "none";
+					}
+					document.getElementById(value).style.display = "block";
+					document.getElementById(values[values.indexOf(value)] + "Div").style.display = "inline";
+				}
+				document.getElementById("recommendedShafts").value = "";
+				document.getElementById("priceUnit").value = "$0";
+				document.getElementById("costInstallations").value = "$0";
+				document.getElementById("costTotal").value = "$0";
+			}
+		</script>
+	</head>
+
+	<!--
+		AVAILABLE BODY CLASSES:
+		
+		smoothscroll 			= create a browser smooth scroll
+		enable-animation		= enable WOW animations
+
+		bg-grey					= grey background
+		grain-grey				= grey grain background
+		grain-blue				= blue grain background
+		grain-green				= green grain background
+		grain-blue				= blue grain background
+		grain-orange			= orange grain background
+		grain-yellow			= yellow grain background
+		
+		boxed 					= boxed layout
+		pattern1 ... patern11	= pattern background
+		menu-vertical-hide		= hidden, open on click
+		
+		BACKGROUND IMAGE [together with .boxed class]
+		data-background="assets/images/_smarty/boxed_background/1.jpg"
+	-->
+	<body class="smoothscroll enable-animation">
+
+		<!-- SLIDE TOP -->
+		<div id="slidetop">
+
+			<div class="container">
+				
+				<div class="row">
+
+					<div class="col-md-4">
+						<h6><i class="icon-heart"></i> Why Rocket Elevators?</h6>
+						<p> Because you deserve the best !! </p>
+					</div>
+
+					<div class="col-md-4">
+						<h6><i class="fa-facheck"></i> Regions deserved :</h6>
+						<ul class="list-unstyled">
+							<li><a href="#"><i class="fa fa-angle-right"></i> Quebec City</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Montreal </a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Tampa Bay (Coming Soon)</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Philadelphia (Comming Soon)</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> New York (Coming Soon)</a></li>
+						</ul>
+					</div>
+
+					<div class="col-md-4">
+						<h6><i class="icon-envelope"></i> CONTACT INFO</h6>
+						<ul class="list-unstyled">
+							<li><b>Address:</b> 418-725 Boulevard Lebourgneuf,  <br /> Québec, QC G2J 0C4, Canada</li>
+							<li><b>Phone:</b> (581) 701-0303</li>
+							<li><b>Email:</b> <a href="mailto:info@codebox.biz">info@codebox.biz</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+
+			<a class="slidetop-toggle" href="#"><!-- toggle button --></a>
+
+		</div>
+		<!-- /SLIDE TOP -->
+
+
+		<!-- wrapper -->
+		<div id="wrapper">
+
+			<!-- 
+				AVAILABLE HEADER CLASSES
+
+				Default nav height: 96px
+				.header-md 		= 70px nav height
+				.header-sm 		= 60px nav height
+
+				.b-0 		= remove bottom border (only with transparent use)
+				.transparent	= transparent header
+				.translucent	= translucent header
+				.sticky			= sticky header
+				.static			= static header
+				.dark			= dark header
+				.bottom			= header on bottom
+				
+				shadow-before-1 = shadow 1 header top
+				shadow-after-1 	= shadow 1 header bottom
+				shadow-before-2 = shadow 2 header top
+				shadow-after-2 	= shadow 2 header bottom
+				shadow-before-3 = shadow 3 header top
+				shadow-after-3 	= shadow 3 header bottom
+
+				.clearfix		= required for mobile menu, do not remove!
+
+				Example Usage:  class="clearfix sticky header-sm transparent b-0"
+			-->
+			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+
+				<!-- TOP NAV -->
+				<header id="topNav">
+					<div class="container">
+
+						<!-- Mobile Menu Button -->
+						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
+
+						<!-- Logo -->
+						<a class="logo float-left scrollTo" href="#top">
+							<img src="Pictures\R2.png" alt="" />
+						</a>
+
+						<!-- 
+							Top Nav 
+							
+							AVAILABLE CLASSES:
+							submenu-dark = dark sub menu
+						-->
+						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+							<nav class="nav-main">
+
+								<!-- 
+									.nav-onepage
+									Required for onepage navigation links
+									
+									Add .external for an external link!
+								-->
+								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+									<li><!-- HOME -->
+										<a class="external" href="index-onepage-rocket.html">
+											BACK TO HOMEPAGE
+										</a>
+									</li>
+								</ul>
+
+							</nav>
+						</div>
+
+					</div>
+				</header>
+				<!-- /Top Nav -->
+
+			</div>
+
+			<!-- Overview -->
+			<section id="overview" padding="50px">
+				<div class="container text-center">
+
+					<div class="container text-center">
+						<h3 class="fw-600"><span>PRICE ESTIMATION FORM</span></h3>
+						
+						<p>Please enter your desired options.</p>
+							
+					</div>
+
+				</div>
+			</section>
+			<!-- /Overview -->
+
+			<!-- PRICE CALCULATOR -->
+			<section id="mortgage-calculator">
+				<div class="container pt-30 pb-30">
+
+					<div class="row">
+
+						<div class="col-md-6">
+
+							<div class="row">
+
+								<div class="col-sm-6 m-0">
+									<label class="fs-10">Building Type</label>
+									<select id="mcalc-term" class="form-check">
+										<option value="residential" selected="selected">Residential</option>
+										<option value="commercial">Commercial</option>
+										<option value="corporate">Corporate</option>
+										<option value="hybrid">Hybrid</option>
+									</select>	
+									<hr>
+									<label class="fs-12">Product Line</label>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="exampleRadios" id="mcalc-term1" value="standard" checked>
+										<label class="form-check-label" for="mcalc-term1">
+										  Standard
+										</label>
+									  </div>
+									  <div class="form-check">
+										<input class="form-check-input" type="radio" name="exampleRadios" id="mcalc-term2" value="premium">
+										<label class="form-check-label" for="mcalc-term2">
+										  Premium
+										</label>
+									  </div>
+									  <div class="form-check">
+										<input class="form-check-input" type="radio" name="exampleRadios" id="mcalc-term3" value="excelium">
+										<label class="form-check-label" for="mcalc-term3">
+										  Excelium
+										</label>
+									  </div>							
+								</div>
+
+								<div class="col-sm-6 m-0">
+									<label class="fs-12">NUMBER OF APPARTEMENTS</label>
+									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="16">
+
+									<label class="fs-12">NUMBER OF FLOORS</label>
+									<input id="mcalc-price" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="4">
+
+									<label class="fs-12">NUMBER OF BASEMENTS</label>
+									<input id="mcalc-rate" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="col-md-6 mb-30">
+
+
+							<table class="table fs-14 m-0">
+								<tbody>
+									<tr>
+										<td class="b-0 p-3">RECOMMANDED NUMBER OF ELEVETOR</td>
+										<td class="b-0 p-3 text-right text-warning fw-800"><span id="mcalc-result-mamount">0</span></td>
+									</tr>
+								</tbody>
+							</table>
+
+							<hr />
+
+							<table class="table fs-14 m-0">
+								<tbody>
+									<tr>
+										<td class="b-0 p-3">PRICE FOR ONE ELEVATOR UNIT</td>
+										<td class="b-0 p-3 text-right text-black fw-800">$<span id="mcalc-mortgage">0<span></td>
+									</tr>
+									<tr>
+										<td class="b-0 p-3">INSTALLATION COST</td>
+										<td class="b-0 p-3 text-right text-black fw-800">$<span id="mcalc-charges">0</span></td>
+									</tr>
+								</tbody>
+							</table>
+							
+							<hr />
+
+							<table class="table fs-14 m-0">
+								<tbody>
+									<tr>
+										<td class="b-0 p-3">TOTAL COST</td>
+										<td class="b-0 p-3 text-right text-black fw-800">$<span id="mcalc-pmonthly">0</span></td>
+									</tr>
+								</tbody>
+							</table>
+
+
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /MORTGAGE CALCULATOR -->
+
+
+
+
+
+		</div>
+		<!-- /wrapper -->
+
+
+		<!-- SCROLL TO TOP -->
+		<a href="#" id="toTop"></a>
+
+
+		<!-- PRELOADER -->
+		<div id="preloader">
+			<div class="inner">
+				<span class="loader"></span>
+			</div>
+		</div><!-- /PRELOADER -->
+
+
+		<!-- JAVASCRIPT FILES -->
+		<script>var plugin_path = 'assets/plugins/';</script>
+		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+		<script src="assets/js/scripts.js"></script>
+		
+		<!-- REVOLUTION SLIDER -->
+		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
+		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
+		<script src="assets/js/view/demo.revolution_slider.js"></script>
+
+		<!-- PAGELEVEL SCRIPTS -->
+		<script src="assets/js/contact.js"></script>
+		
+	</body>
+</html>
