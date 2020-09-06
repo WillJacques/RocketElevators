@@ -30,7 +30,7 @@
 		<link href="assets/css/custom-forms-v2.css" rel="stylesheet" type="text/css" />
 
 	</head>
-
+	
 	<!--
 		AVAILABLE BODY CLASSES:
 		
@@ -208,7 +208,7 @@
 									</select>	
 							
 									<hr>
-									<label class="fs-12">Product Line</label>
+									<label class="fs-6">Product Line</label>
 									<div class="form-check">
 										<input class="form-check-input" type="radio" name="exampleRadios" id="mcalc-term1" value="standard" checked>
 										<label class="form-check-label" for="mcalc-term1">
@@ -229,48 +229,30 @@
 									  </div>							
 								</div>
 
-								<div class="col-sm-6 m-0" id="residential">
-									<label class="fs-12">NUMBER OF APARTMENTS</label>
+								<div id="residential" style= "display:none" class="building_type">
+									<label class="fs-6">NUMBER OF APARTMENTS</label>
 									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="16">
 
-									<label class="fs-12">NUMBER OF FLOORS</label>
+									<label class="fs-6">NUMBER OF FLOORS</label>
 									<input id="mcalc-price" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="4">
 
-									<label class="fs-12">NUMBER OF BASEMENTS</label>
+									<label class="fs-6">NUMBER OF BASEMENTS</label>
 									<input id="mcalc-rate" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
 								</div>
 
-								<div class="col-sm-6 m-0" id="commercial" style= "display:none">
-									<label class="fs-12">NUMBER OF COMMERCIAL</label>
+								<div id="commercial" style= "display:none" class="building_type">
+									<label class="fs-6">NUMBER OF COMMERCIAL</label>
 									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="16">
-
-									<label class="fs-12">NUMBER OF FLOORS</label>
-									<input id="mcalc-price" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="4">
-
-									<label class="fs-12">NUMBER OF BASEMENTS</label>
-									<input id="mcalc-rate" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
 								</div>
 
-								<div class="col-sm-6 m-0" id="corporate" style= "display:none">
-									<label class="fs-12">NUMBER OF CORPORATE</label>
+								<div id="corporate" style= "display:none" class="building_type">
+									<label class="fs-6">NUMBER OF CORPORATE</label>
 									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="16">
-
-									<label class="fs-12">NUMBER OF FLOORS</label>
-									<input id="mcalc-price" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="4">
-
-									<label class="fs-12">NUMBER OF BASEMENTS</label>
-									<input id="mcalc-rate" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
 								</div>
 
-								<div class="col-sm-6 m-0" id="hybrid" style= "display:none">
-									<label class="fs-12">NUMBER OF HYBRID</label>
+								<div id="hybrid" style= "display:none" class="building_type">
+									<label class="fs-6">NUMBER OF HYBRID</label>
 									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="16">
-
-									<label class="fs-12">NUMBER OF FLOORS</label>
-									<input id="mcalc-price" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="4">
-
-									<label class="fs-12">NUMBER OF BASEMENTS</label>
-									<input id="mcalc-rate" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
 								</div>
 
 							</div>
@@ -356,6 +338,18 @@
 
 		<!-- PAGELEVEL SCRIPTS -->
 		<script src="assets/js/contact.js"></script>
+
+		
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('.building_type').hide();
+	
+				$('#selectMe').change(function () {
+				$('.building_type').hide();
+				$('#' + $(this).val()).show();
+				})
+			});
+		</script>
 		
 	</body>
 </html>
