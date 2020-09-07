@@ -174,7 +174,7 @@
 			</div>
 
 			<!-- Overview -->
-			<section id="overview" padding="50px">
+			<section id="overview">
 				<div class="container text-center">
 
 					<div class="container text-center">
@@ -194,7 +194,7 @@
 
 					<div class="row">
 
-						<div class="col-md-6">
+						<div class="col-md-8">
 
 							<div class="row">
 
@@ -242,25 +242,64 @@
 								</div>
 
 								<div id="commercial" style= "display:none" class="building_type">
-									<label class="fs-6">NUMBER OF COMMERCIAL</label>
+									<label class="fs-6">NUMBER OF DISTINCT BUSINESSES </label>
+									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="8">
+
+									<label class="fs-6">NUMBER OF FLOORS</label>
+									<input id="mcalc-price" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="4">
+
+									<label class="fs-6">NUMBER OF BASEMENTS</label>
+									<input id="mcalc-rate" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
+
+									<label class="fs-6">NUMBER OF PARKING SPACES AVAILABLE</label>
+									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="36">
+
+									<label class="fs-6">NUMBER OF ELEVATOR CAGES TO BE DEPLOYED</label>
 									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="16">
 								</div>
 
 								<div id="corporate" style= "display:none" class="building_type">
-									<label class="fs-6">NUMBER OF CORPORATE</label>
+									<label class="fs-6">NUMBER OF SEPARATE TENANT COMPAGNIES</label>
 									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="16">
+
+									<label class="fs-6">NUMBER OF FLOORS</label>
+									<input id="mcalc-price" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="4">
+
+									<label class="fs-6">NUMBER OF BASEMENTS</label>
+									<input id="mcalc-rate" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
+
+									<label class="fs-6">NUMBER OF PARKING SPACES AVAILABLE</label>
+									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="36">
+
+									<label class="fs-6">MAXIMUM NUMBER OF OCCUPANTS PER FLOOR</label>
+									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="8">
 								</div>
 
 								<div id="hybrid" style= "display:none" class="building_type">
-									<label class="fs-6">NUMBER OF HYBRID</label>
+									<label class="fs-6">NUMBER OF DISTINCT BUSINESSES</label>
 									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="16">
+
+									<label class="fs-6">NUMBER OF FLOORS</label>
+									<input id="mcalc-price" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="4">
+
+									<label class="fs-6">NUMBER OF BASEMENTS</label>
+									<input id="mcalc-rate" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
+
+									<label class="fs-6">NUMBER OF PARKING SPACES AVAILABLE</label>
+									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="36">
+
+									<label class="fs-6">MAXIMUM NUMBER OF OCCUPANTS PER FLOOR</label>
+									<input id="mcalc-rate" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="8">
+
+									<label class="fs-6">NUMBER OF HOURS OF ACTIVITY OF THE BUILDING</label>
+									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" max="24" class="form-control" value="12">
 								</div>
 
 							</div>
 
 						</div>
 
-						<div class="col-md-6 mb-30">
+						<div class="col-md-4 mb-30">
 
 
 							<table class="table fs-14 m-0">
