@@ -2,7 +2,8 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Smarty - Multipurpose + Admin</title>
+		<title>Rocket Elevators - Quote</title>
+		<link rel="icon" href="Pictures/webicon.png">
 		<meta name="description" content="" />
 		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
@@ -137,7 +138,7 @@
 						</button>
 
 						<!-- Logo -->
-						<a class="logo float-left scrollTo" href="#top">
+						<a class="logo float-left external" href="index-onepage-rocket.html#top">
 							<img src="Pictures\R2.png" alt="" />
 						</a>
 
@@ -157,9 +158,39 @@
 									Add .external for an external link!
 								-->
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-									<li><!-- HOME -->
-										<a class="external" href="index-onepage-rocket.html">
-											BACK TO HOMEPAGE
+									<li class="active"><!-- HOME -->
+										<a href="index-onepage-rocket.html">
+											HOME
+										</a>
+									</li>
+									<li><!-- SERVICES -->
+										<a class="dropdown-toggle" href="index-onepage-rocket.html#services">
+											SERVICES
+										</a>
+										<ul class="dropdown-menu">
+											<li><a href="index-residential-rocket.html">Residential</a></li>
+											<li><a href="index-corporative-rocket.html">Corporative</a></li>
+											<li><a href="index-quote-rocket.html">Quote</a></li>
+										</ul>
+									</li>
+									<li><!-- PORTFOLIO -->
+										<a href="index-onepage-rocket.html#portfolio">
+											PORTFOLIO
+										</a>
+									</li>
+									<li><!-- NEWS -->
+										<a href="index-onepage-rocket.html#news">
+											NEWS
+										</a>
+									</li>
+									<li><!-- CLIENTS -->
+										<a href="index-onepage-rocket.html#clients">
+											CLIENTS
+										</a>
+									</li>
+									<li><!-- CONTACT -->
+										<a href="index-onepage-rocket.html#contact">
+											CONTACT
 										</a>
 									</li>
 								</ul>
@@ -174,23 +205,25 @@
 			</div>
 
 			<!-- Overview -->
-			<section id="overview">
 				<div class="container text-center">
 
 					<div class="container text-center">
+
+						<p></p>
+
 						<h3 class="fw-600"><span>PRICE ESTIMATION FORM</span></h3>
 						
 						<p>Please enter your desired options.</p>
+
+						<hr>
 							
 					</div>
 
 				</div>
-			</section>
 			<!-- /Overview -->
 
 			<!-- PRICE CALCULATOR -->
-			<section id="elevator-calculator">
-				<div class="container pt-30 pb-30">
+				<div class="container pt-30 pb-30" id="elevator-calculator">
 
 					<div class="row">
 
@@ -201,98 +234,92 @@
 								<div class="col-sm-6 m-0">
 									<label class="fs-10">Building Type</label>
 									<select id="selectMe" class="form-check" rel="stylesheet" type="text/css">
-										<option value="" selected="selected">---Select---</option>
-										<option value="residential">Residential</option>
-										<option value="commercial">Commercial</option>
-										<option value="corporate">Corporate</option>
-										<option value="hybrid">Hybrid</option>
+										<option id="" value="" selected="selected">---Select---</option>
+										<option id="residential1" value="residential">Residential</option>
+										<option id="commercial1" value="commercial">Commercial</option>
+										<option id="corporate1" value="corporate">Corporate</option>
+										<option id="hybrid1" value="hybrid">Hybrid</option>
 									</select>	
 							
 									<hr>
 									<label class="fs-6">Product Line</label>
-									<div class="form-check">
-										<input class="form-check-input" type="radio" name="exampleRadios" id="mcalc-term1" value="standard" checked>
-										<label class="form-check-label" for="mcalc-term1">
+									<div id="serviceline" class="form-check">
+										<input class="form-check-input" type="radio" name="exampleRadios" id="mcalc-stdline" value="standard" checked>
 										  Standard
-										</label>
 									  </div>
 									  <div class="form-check">
-										<input class="form-check-input" type="radio" name="exampleRadios" id="mcalc-term2" value="premium">
-										<label class="form-check-label" for="mcalc-term2">
+										<input class="form-check-input" type="radio" name="exampleRadios" id="mcalc-preline" value="premium">
 										  Premium
-										</label>
 									  </div>
 									  <div class="form-check">
-										<input class="form-check-input" type="radio" name="exampleRadios" id="mcalc-term3" value="excelium">
-										<label class="form-check-label" for="mcalc-term3">
+										<input class="form-check-input" type="radio" name="exampleRadios" id="mcalc-excline" value="excelium">
 										  Excelium
-										</label>
-									  </div>							
+									</div>							
 								</div>
 
 								<div id="residential" style= "display:none" class="building_type">
 									<label class="fs-6">NUMBER OF APARTMENTS</label>
-									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="16">
+									<input id="mcalc-naparts" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="16">
 
 									<label class="fs-6">NUMBER OF FLOORS</label>
-									<input id="mcalc-price" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="4">
+									<input id="mcalc-nfloors" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="4">
 
 									<label class="fs-6">NUMBER OF BASEMENTS</label>
-									<input id="mcalc-rate" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
+									<input id="mcalc-nbasements" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
 								</div>
 
 								<div id="commercial" style= "display:none" class="building_type">
 									<label class="fs-6">NUMBER OF DISTINCT BUSINESSES </label>
-									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="8">
+									<input id="mcalc-nbusiness" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="8">
 
 									<label class="fs-6">NUMBER OF FLOORS</label>
-									<input id="mcalc-price" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="4">
+									<input id="mcalc-nfloors" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="4">
 
 									<label class="fs-6">NUMBER OF BASEMENTS</label>
-									<input id="mcalc-rate" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
+									<input id="mcalc-nbasements" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
 
 									<label class="fs-6">NUMBER OF PARKING SPACES AVAILABLE</label>
-									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="36">
+									<input id="mcalc-nparking" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="36">
 
 									<label class="fs-6">NUMBER OF ELEVATOR CAGES TO BE DEPLOYED</label>
-									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="16">
+									<input id="mcalc-nelevator" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="16">
 								</div>
 
 								<div id="corporate" style= "display:none" class="building_type">
 									<label class="fs-6">NUMBER OF SEPARATE TENANT COMPAGNIES</label>
-									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="16">
+									<input id="mcalc-ntenant" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="16">
 
 									<label class="fs-6">NUMBER OF FLOORS</label>
-									<input id="mcalc-price" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="4">
+									<input id="mcalc-nfloors" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="4">
 
 									<label class="fs-6">NUMBER OF BASEMENTS</label>
-									<input id="mcalc-rate" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
+									<input id="mcalc-nbasements" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
 
 									<label class="fs-6">NUMBER OF PARKING SPACES AVAILABLE</label>
-									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="36">
+									<input id="mcalc-nparking" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="36">
 
 									<label class="fs-6">MAXIMUM NUMBER OF OCCUPANTS PER FLOOR</label>
-									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="8">
+									<input id="mcalc-noccupant" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="8">
 								</div>
 
 								<div id="hybrid" style= "display:none" class="building_type">
 									<label class="fs-6">NUMBER OF DISTINCT BUSINESSES</label>
-									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="16">
+									<input id="mcalc-nbusiness" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="16">
 
 									<label class="fs-6">NUMBER OF FLOORS</label>
-									<input id="mcalc-price" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="4">
+									<input id="mcalc-nfloors" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="4">
 
 									<label class="fs-6">NUMBER OF BASEMENTS</label>
-									<input id="mcalc-rate" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
+									<input id="mcalc-nbasements" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
 
 									<label class="fs-6">NUMBER OF PARKING SPACES AVAILABLE</label>
-									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="36">
+									<input id="mcalc-nparking" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="36">
 
 									<label class="fs-6">MAXIMUM NUMBER OF OCCUPANTS PER FLOOR</label>
-									<input id="mcalc-rate" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="8">
+									<input id="mcalc-noccupant" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="8">
 
 									<label class="fs-6">NUMBER OF HOURS OF ACTIVITY OF THE BUILDING</label>
-									<input id="mcalc-dpayment" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" max="24" class="form-control" value="12">
+									<input id="mcalc-nhours" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" max="24" class="form-control" value="12">
 								</div>
 
 							</div>
@@ -306,7 +333,15 @@
 								<tbody>
 									<tr>
 										<td class="b-0 p-3">RECOMMENDED NUMBER OF ELEVATORS</td>
-										<td class="b-0 p-3 text-right text-warning fw-800"><span id="mcalc-result-mamount">0</span></td>
+										<td class="b-0 p-3 text-right text-warning fw-800"><span id="mcalc-result-elevators">0</span></td>
+									</tr>
+									<tr>
+										<td class="b-0 p-3">RECOMMENDED NUMBER OF SHAFTS</td>
+										<td class="b-0 p-3 text-right text-warning fw-800"><span id="mcalc-result-shafts">0</span></td>
+									</tr>
+									<tr>
+										<td class="b-0 p-3">RECOMMENDED NUMBER OF COLUMNS</td>
+										<td class="b-0 p-3 text-right text-warning fw-800"><span id="mcalc-result-columns">0</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -317,11 +352,11 @@
 								<tbody>
 									<tr>
 										<td class="b-0 p-3">PRICE FOR ONE ELEVATOR UNIT</td>
-										<td class="b-0 p-3 text-right text-black fw-800">$<span id="mcalc-mortgage">0<span></td>
+										<td class="b-0 p-3 text-right text-black fw-800">$<span id="mcalc-elevetorunit">5,765.00<span></td>
 									</tr>
 									<tr>
 										<td class="b-0 p-3">INSTALLATION COST</td>
-										<td class="b-0 p-3 text-right text-black fw-800">$<span id="mcalc-charges">0</span></td>
+										<td class="b-0 p-3 text-right text-black fw-800">$<span id="mcalc-installcost">0.00</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -332,7 +367,7 @@
 								<tbody>
 									<tr>
 										<td class="b-0 p-3">TOTAL COST</td>
-										<td class="b-0 p-3 text-right text-black fw-800">$<span id="mcalc-pmonthly">0</span></td>
+										<td class="b-0 p-3 text-right text-black fw-800">$<span id="mcalc-totalcost">0.00</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -343,7 +378,6 @@
 					</div>
 
 				</div>
-			</section>
 			<!-- /MORTGAGE CALCULATOR -->
 
 
@@ -379,17 +413,15 @@
 		<!-- PAGELEVEL SCRIPTS -->
 		<script src="assets/js/contact.js"></script>
 
-
-		<script type="text/javascript">
+		<!-- QUOTE SCRIPTS -->
+		<script src="assets/js/quote.js"></script>
+		<script>
 			$(document).ready(function () {
-				$('.building_type').hide();
-	
 				$('#selectMe').change(function () {
 				$('.building_type').hide();
 				$('#' + $(this).val()).show();
 				})
 			});
-		</script>
-		
+		</script>		
 	</body>
 </html>
