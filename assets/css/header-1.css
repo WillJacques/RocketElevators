@@ -10,10 +10,10 @@
 #topMain.nav-pills>li:hover>a, 
 #topMain.nav-pills>li:focus>a {
 	color:#1F262D;
-	background-color:rgba(0,0,0,0.03);
+	background-color:#0b64a07a;
 }
 #topMain.nav-pills>li.active>a {
-	color:#687482;
+	color:#0b64a07a;
 }
 
 #topMain.nav-pills>li>a.dropdown-toggle {
@@ -35,6 +35,7 @@
 	opacity: .3;
 	line-height: 1em;
 	border:0;
+	
 
 	-webkit-transition: -webkit-transform .2s ease-in;
 	-moz-transition: -moz-transform .2s ease-in;

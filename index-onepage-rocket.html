@@ -6,6 +6,15 @@
 		<link rel="icon" href="Pictures/webicon.png">
 		<meta name="description" content="" />
 		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+		
+		<!-- JQUERY for header/footer -->
+		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+		<script>
+		$(function(){ 
+			$("#header").load("header.html");  
+			$("#footer").load("footer.html");  
+		  }); 
+		</script>
 
 		<!-- mobile settings -->
 		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
@@ -30,27 +39,6 @@
 		<link href="assets/css/color_scheme/darkblue.css" rel="stylesheet" type="text/css" id="color_scheme" />
 	</head>
 
-	<!--
-		AVAILABLE BODY CLASSES:
-		
-		smoothscroll 			= create a browser smooth scroll
-		enable-animation		= enable WOW animations
-
-		bg-grey					= grey background
-		grain-grey				= grey grain background
-		grain-blue				= blue grain background
-		grain-green				= green grain background
-		grain-blue				= blue grain background
-		grain-orange			= orange grain background
-		grain-yellow			= yellow grain background
-		
-		boxed 					= boxed layout
-		pattern1 ... patern11	= pattern background
-		menu-vertical-hide		= hidden, open on click
-		
-		BACKGROUND IMAGE [together with .boxed class]
-		data-background="assets/images/_smarty/boxed_background/1.jpg"
-	-->
 	<body class="smoothscroll enable-animation">
 
 		<!-- SLIDE TOP -->
@@ -98,142 +86,12 @@
 		<!-- wrapper -->
 		<div id="wrapper">
 
-			<!-- 
-				AVAILABLE HEADER CLASSES
-
-				Default nav height: 96px
-				.header-md 		= 70px nav height
-				.header-sm 		= 60px nav height
-
-				.b-0 		= remove bottom border (only with transparent use)
-				.transparent	= transparent header
-				.translucent	= translucent header
-				.sticky			= sticky header
-				.static			= static header
-				.dark			= dark header
-				.bottom			= header on bottom
-				
-				shadow-before-1 = shadow 1 header top
-				shadow-after-1 	= shadow 1 header bottom
-				shadow-before-2 = shadow 2 header top
-				shadow-after-2 	= shadow 2 header bottom
-				shadow-before-3 = shadow 3 header top
-				shadow-after-3 	= shadow 3 header bottom
-
-				.clearfix		= required for mobile menu, do not remove!
-
-				Example Usage:  class="clearfix sticky header-sm transparent b-0"
-			-->
-			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
-
-				<!-- TOP NAV -->
-				<header id="topNav">
-					<div class="container">
-
-						<!-- Mobile Menu Button -->
-						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
-							<i class="fa fa-bars"></i>
-						</button>
-
-						<!-- Logo -->
-						<a class="logo float-left external" href="index-onepage-rocket.html#top">
-							<img src="Pictures\R2.png" alt="" />
-						</a>
-
-						<!-- 
-							Top Nav 
-							
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
-						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
-							<nav class="nav-main">
-
-								<!-- 
-									.nav-onepage
-									Required for onepage navigation links
-									
-									Add .external for an external link!
-								-->
-								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-									<li class="active"><!-- HOME -->
-										<a href="index-onepage-rocket.html#wrapper">
-											HOME
-										</a>
-									</li>
-									<li><!-- SERVICES -->
-										<a class="dropdown-toggle" href="index-onepage-rocket.html#services">
-											SERVICES
-										</a>
-										<ul class="dropdown-menu">
-											<li><a href="index-residential-rocket.html">Residential</a></li>
-											<li><a href="index-corporative-rocket.html">Corporative</a></li>
-											<li><a href="index-quote-rocket.html">Quote</a></li>
-										</ul>
-									</li>
-									<li><!-- PORTFOLIO -->
-										<a href="index-onepage-rocket.html#portfolio">
-											PORTFOLIO
-										</a>
-									</li>
-									<li><!-- NEWS -->
-										<a href="index-onepage-rocket.html#news">
-											NEWS
-										</a>
-									</li>
-									<li><!-- CLIENTS -->
-										<a href="index-onepage-rocket.html#clients">
-											CLIENTS
-										</a>
-									</li>
-									<li><!-- CONTACT -->
-										<a href="index-onepage-rocket.html#contact">
-											CONTACT
-										</a>
-									</li>
-								</ul>
-
-							</nav>
-						</div>
-
-					</div>
-				</header>
-				<!-- /Top Nav -->
-
-			</div>
-
-
+			<!-- HEADER -->
+			<div id="header" class="navbar-toggleable-md sticky header-md clearfix"></div>
 
 			<!-- REVOLUTION SLIDER -->
 			<div class="slider fullwidthbanner-container roundedcorners">
-				<!--
-					Navigation Styles:
-					
-						data-navigationStyle="" theme default navigation
-						
-						data-navigationStyle="preview1"
-						data-navigationStyle="preview2"
-						data-navigationStyle="preview3"
-						data-navigationStyle="preview4"
-						
-					Bottom Shadows
-						data-shadow="1"
-						data-shadow="2"
-						data-shadow="3"
-						
-					Slider Height (do not use on fullscreen mode)
-						data-height="300"
-						data-height="350"
-						data-height="400"
-						data-height="450"
-						data-height="500"
-						data-height="550"
-						data-height="600"
-						data-height="650"
-						data-height="700"
-						data-height="750"
-						data-height="800"
-				-->
+				
 				<div class="fullwidthbanner" data-height="600" data-shadow="0" data-navigationStyle="preview2">
 					<ul class="hide">
 					
@@ -286,7 +144,7 @@
 								data-endelementdelay="0.1"
 								data-endspeed="500"
 								style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
-									<a class="btn btn-red btn-3d" href="index-quote-rocket.html">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>
+									<a class="btn btn-red btn-3d" href="quote.html">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>
 						</li>
 
 						<!-- SLIDE  -->
@@ -339,7 +197,7 @@
 								data-endelementdelay="0.1"
 								data-endspeed="500"
 								style="z-index: 4; max-width: auto;">
-									<a class="btn btn-red btn-3d" href="index-residential-rocket.html">OUR RESIDENTIAL SERVICES &nbsp; <i class="fa fa-angle-right"></i></a>
+									<a class="btn btn-red btn-3d" href="residential.html">OUR RESIDENTIAL SERVICES &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
 
 						</li>
@@ -394,7 +252,7 @@
 								data-endelementdelay="0.1"
 								data-endspeed="500"
 								style="z-index: 4; max-width: auto;">
-									<a class="btn btn-red btn-3d" href="index-corporative-rocket.html">OUR CORPORATE SERVICES &nbsp; <i class="fa fa-angle-right"></i></a>
+									<a class="btn btn-red btn-3d" href="corporative.html">OUR CORPORATE SERVICES &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
 
 						</li>
@@ -410,10 +268,10 @@
 
 
 			<!-- BUTTON CALLOUT -->
-			<a href="#contact" class="btn btn-xlg btn-primary fs-20 fullwidth m-0 rad-0 p-40">
+			<a href="quote.html" class="btn btn-xlg btn-primary fs-20 fullwidth m-0 rad-0 p-40 external">
 				<span class="font-lato fs-30">
 					Did Rocket Elevators convinced you? 
-					<strong>Contact us &raquo;</strong>
+					<strong> GET A QUOTE !! &raquo;</strong>
 				</span>
 			</a>
 			<!-- /BUTTON CALLOUT -->
@@ -436,14 +294,14 @@
 							<img class="img-fluid" src="Pictures/319779850_residential.jpg" alt="img" />
 							<h3 class="mt-10">Residential Services</h3>
 							<p>We offer great quality products for residential uses. Let us rise your property value ! Click the button for more information.<p>
-							<a href="index-residential-rocket.html" class="btn btn-default">Learn More...</a>
+							<a href="residential.html" class="btn btn-default">Learn More...</a>
 						</div>
 
 						<div class="col-sm-4">
 							<img class="img-fluid" src="Pictures/AdobeStock_146216308.jpeg" alt="img" />
 							<h3 class="mt-10">Corporate Services</h3>
 							<p>We are your solution for your corporate buildings. Click the button for more information.</p>
-							<a href="index-corporative-rocket.html" class="btn btn-default">Learn More...</a>
+							<a href="corporative.html" class="btn btn-default">Learn More...</a>
 						</div>
 
 					</div>
@@ -463,7 +321,7 @@
 
 					<div class="text-center">
 						<h2 class="fs-40 fw-300">Elevator Expert Since 1976</h2>
-						<a class="btn btn-red btn-3d" href="index-quote-rocket.html">REQUEST A QUOTE <i class="fa fa-angle-right"></i></a> 
+						<a class="btn btn-red btn-3d" href="quote.html">REQUEST A QUOTE <i class="fa fa-angle-right"></i></a> 
 						&nbsp; OR &nbsp; 
 						<a class="btn btn-red btn-3d" href="#contact">CONTACT US <i class="fa fa-angle-right"></i></a>
 					</div>
@@ -915,32 +773,13 @@
 						<h2>Recent News</h2>
 					</div>
 
-					<!-- 
-						controlls-over		= navigation buttons over the image 
-						buttons-autohide 	= navigation buttons visible on mouse hover only
-						
-						data-plugin-options:
-							"singleItem": true
-							"autoPlay": true (or ms. eg: 4000)
-							"navigation": true
-							"pagination": true
-							"items": "4"
-
-						owl-carousel item paddings
-							.owl-padding-0
-							.owl-padding-3
-							.owl-padding-6
-							.owl-padding-10
-							.owl-padding-15
-							.owl-padding-20
-					-->
-					<div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": true, "autoPlay": 4000, "navigation": true, "pagination": false}'>
+					<div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"2", "autoPlay": 4000, "navigation": true, "pagination": false}'>
 						<div class="img-hover">
-							<a href="https://scientect.com/news/1225888/global-elevator-and-escalator-market-to-register-explosive-growth-detailed-analysis-size-share-strategies-demand-analysis-and-projected-huge-growth-by-2026/">
+							<a href="https://scientect.com/news/1225888/global-elevator-and-escalator-market-to-register-explosive-growth-detailed-analysis-size-share-strategies-demand-analysis-and-projected-huge-growth-by-2026/" target="_blank">
 								<img class="img-fluid" src="Pictures/news1.jpg" alt="" width="600">
 							</a>
 
-							<h4 class="text-left mt-20"><a href="https://scientect.com/news/1225888/global-elevator-and-escalator-market-to-register-explosive-growth-detailed-analysis-size-share-strategies-demand-analysis-and-projected-huge-growth-by-2026/">Global Elevator and Escalator Market To Register Explosive Growth</a></h4>
+							<h4 class="text-left mt-20"><a href="https://scientect.com/news/1225888/global-elevator-and-escalator-market-to-register-explosive-growth-detailed-analysis-size-share-strategies-demand-analysis-and-projected-huge-growth-by-2026/" target="_blank">Global Elevator and Escalator Market To Register Explosive Growth</a></h4>
 							<p class="text-left">Elevator and Escalator Industry Market report 2020, discourses numerous driving factors or restraining the market, which will help the future market to raise with a huge CAGR. </p>
 							<ul class="text-left fs-12 list-inline list-separator">
 								<li>
@@ -951,11 +790,11 @@
 							</ul>
 						</div>
 						<div class="img-hover">
-							<a href="https://www.fool.com/millionacres/real-estate-market/articles/home-elevator-worth-the-investment/">
+							<a href="https://www.fool.com/millionacres/real-estate-market/articles/home-elevator-worth-the-investment/" target="_blank">
 								<img class="img-fluid" src="Pictures/news2.jpg" alt="" width="600">
 							</a>
 
-							<h4 class="text-left mt-20"><a href="https://www.fool.com/millionacres/real-estate-market/articles/home-elevator-worth-the-investment/">Home Elevator: Worth the Investment?</a></h4>
+							<h4 class="text-left mt-20"><a href="https://www.fool.com/millionacres/real-estate-market/articles/home-elevator-worth-the-investment/" target="_blank">Home Elevator: Worth the Investment?</a></h4>
 							<p class="text-left">According to the U.S. Census Bureau, there are 49.2 million Americans who are age 65 or older. Another report indicated that there were 15.7 million Americans in that age group with a disability, with over 10 million having difficulty walking. For these individuals, an elevator in the home would change their lives, allowing them to age in place.</p>
 							<ul class="text-left fs-12 list-inline list-separator">
 								<li>
@@ -965,11 +804,11 @@
 							</ul>
 						</div>
 						<div class="img-hover">
-							<a href="https://patch.com/maryland/bethesda-chevychase/5m-circa-1930-tudor-chevy-chase-has-elevator-gym">
+							<a href="https://patch.com/maryland/bethesda-chevychase/5m-circa-1930-tudor-chevy-chase-has-elevator-gym" target="_blank">
 								<img class="img-fluid" src="Pictures/news3.jpg" alt="" width="600">
 							</a>
 
-							<h4 class="text-left mt-20"><a href="https://patch.com/maryland/bethesda-chevychase/5m-circa-1930-tudor-chevy-chase-has-elevator-gym">This $5M, Circa-1930 Tudor In Chevy Chase Has An Elevator, Gym</a></h4>
+							<h4 class="text-left mt-20"><a href="https://patch.com/maryland/bethesda-chevychase/5m-circa-1930-tudor-chevy-chase-has-elevator-gym" target="_blank">This $5M, Circa-1930 Tudor In Chevy Chase Has An Elevator, Gym</a></h4>
 							<p class="text-left">Built in 1930, this gorgeous Chevy Chase home boasts a main floor study, a master suite with a sitting area, a screened-in porch, and more.</p>
 							<ul class="text-left fs-12 list-inline list-separator">
 								<li>
@@ -979,11 +818,11 @@
 							</ul>
 						</div>
 						<div class="img-hover">
-							<a href="https://www.businesswire.com/news/home/20200828005306/en/United-States-Elevator-Escalator-Market-Analysis-2020-2024">
+							<a href="https://www.businesswire.com/news/home/20200828005306/en/United-States-Elevator-Escalator-Market-Analysis-2020-2024" target="_blank">
 								<img class="img-fluid" src="Pictures/news4.jpg" alt="" width="600">
 							</a>
 
-							<h4 class="text-left mt-20"><a href="https://www.businesswire.com/news/home/20200828005306/en/United-States-Elevator-Escalator-Market-Analysis-2020-2024">United States Elevator and Escalator Market Analysis 2020-2024: Demand for Modernization is Driving Growth in the Market</a></h4>
+							<h4 class="text-left mt-20"><a href="https://www.businesswire.com/news/home/20200828005306/en/United-States-Elevator-Escalator-Market-Analysis-2020-2024" target="_blank">United States Elevator and Escalator Market Analysis 2020-2024: Demand for Modernization is Driving Growth in the Market</a></h4>
 							<p class="text-left">The elevator and escalator market in the US is poised to grow by $ 876.82 mn during 2020-2024 progressing at a CAGR of 3% during the forecast period. This report offers an up-to-date analysis regarding the current US market scenario, latest trends and drivers, and the overall market environment. The market is driven by the changing demographics and increasing adoption of smart homes.</p>
 							<ul class="text-left fs-12 list-inline list-separator">
 								<li>
@@ -993,10 +832,10 @@
 							</ul>
 						</div>
 						<div class="img-hover">
-							<a href="https://www.sudbury.com/local-news/essential-worker-of-the-day-elevator-worker-eric-lebreton-2617242">
+							<a href="https://www.sudbury.com/local-news/essential-worker-of-the-day-elevator-worker-eric-lebreton-2617242" target="_blank">
 								<img class="img-fluid" src="Pictures/news5.jpg" alt="" width="600">
 							</a>
-							<h4 class="text-left mt-20"><a href="https://www.sudbury.com/local-news/essential-worker-of-the-day-elevator-worker-eric-lebreton-2617242">Essential Worker of the Day: Elevator worker Eric LeBreton</a></h4>
+							<h4 class="text-left mt-20"><a href="https://www.sudbury.com/local-news/essential-worker-of-the-day-elevator-worker-eric-lebreton-2617242" target="_blank">Essential Worker of the Day: Elevator worker Eric LeBreton</a></h4>
 							<p class="text-left">Sudbury.com is recognizing Eric LeBreton as today's Essential Worker of the Day.</p>
 							<ul class="text-left fs-12 list-inline list-separator">
 								<li>
@@ -1006,10 +845,10 @@
 							</ul>
 						</div>
 						<div class="img-hover">
-							<a href="https://scientect.com/uncategorized/1193645/elevator-components-market-trends-and-segments-by-2019-to-2029/">
+							<a href="https://scientect.com/uncategorized/1193645/elevator-components-market-trends-and-segments-by-2019-to-2029/" target="_blank">
 								<img class="img-fluid" src="Pictures/news6.jpg" alt="" width="600">
 							</a>
-							<h4 class="text-left mt-20"><a href="https://scientect.com/uncategorized/1193645/elevator-components-market-trends-and-segments-by-2019-to-2029/">Elevator Components Market Trends and Segments by 2019 to 2029</a></h4>
+							<h4 class="text-left mt-20"><a href="https://scientect.com/uncategorized/1193645/elevator-components-market-trends-and-segments-by-2019-to-2029/" target="_blank">Elevator Components Market Trends and Segments by 2019 to 2029</a></h4>
 							<p class="text-left">The study on the Elevator Components Market Research offers a profound comprehension of the market dynamics like opportunities, drivers, trends, and the challenges. The analysis further elaborates on the micro and macro-economic aspects which can be predicted to shape the rise of the Elevator Components Market throughout the forecast period (2019-2029).</p>
 							<ul class="text-left fs-12 list-inline list-separator">
 								<li>
@@ -1078,8 +917,12 @@
 			</section>
 			<!-- /Clients -->
 
-
-
+			<a href="quote.html" class="btn btn-xlg btn-primary fs-20 fullwidth m-0 rad-0 p-40 external">
+				<span class="font-lato fs-30">
+					Did Rocket Elevators convinced you? 
+					<strong> GET A QUOTE !! &raquo;</strong>
+				</span>
+			</a>
 
 			<!-- CONTACT -->
 			<section id="contact">
@@ -1165,12 +1008,12 @@
 									</div>
 									<div class="row">
 											<div class="col-md-4">
-												<label for="contact:subject">Entreprise Name</label>
-												<input required type="text" value="" class="form-control" name="contact[subject]" id="contact:subject">
+												<label for="contact:entreprisename">Entreprise Name</label>
+												<input required type="text" value="" class="form-control" name="contact[entreprisename]" id="contact:entreprisename">
 											</div>
 											<div class="col-md-4">
-												<label for="contact:subject">Project Name</label>
-												<input required type="text" value="" class="form-control" name="contact[subject]" id="contact:subject">
+												<label for="contact:projectname">Project Name</label>
+												<input required type="text" value="" class="form-control" name="contact[projectname]" id="contact:projectname">
 											</div>
 											<div class="col-md-4">
 												<label for="contact_department">Department</label>
@@ -1184,8 +1027,8 @@
 									</div>
 									<div class="row">
 										<div class="col-md-12">
-											<label for="contact:message">Project Description</label>
-											<textarea required maxlength="10000" rows="1" class="form-control" name="contact[message]" id="contact:message"></textarea>
+											<label for="contact:projectdescription">Project Description</label>
+											<textarea required maxlength="10000" rows="1" class="form-control" name="contact[projectdescription]" id="contact:projectdescription"></textarea>
 										</div>
 									</div>
 									<div class="row">
@@ -1246,74 +1089,7 @@
 
 
 			<!-- FOOTER -->
-			<footer id="footer">
-				<div class="container">
-
-
-					<div class="row">
-
-						<!-- col #1 -->
-						<div class="col-md-8">
-
-							<h3 class="letter-spacing-1">WHY US?</h3>
-
-							<!-- Small Description -->
-							<p>
-								Because we're :
-							</p>
-							<p>
-								<img src="Pictures/simply.gif" alt="Tina Turner" /> 
-							</p>
-							<p>
-								<audio controls>
-									<source src="Audio/Simplythebest.mp3" type="audio/mpeg">
-								  Your browser does not support the audio element.
-								  </audio>
-							</p>
-							<h2>(581) 701-0303</h2>
-						</div>
-						<!-- /col #1 -->
-
-						<!-- col #2 -->
-						<div class="col-md-4">
-							<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
-
-							<!-- Newsletter Form -->
-							<p>Subscribe to Our Newsletter to get Important News & Offers</p>
-
-							<form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-									<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
-									<span class="input-group-btn">
-										<button class="btn btn-blue" type="submit">Subscribe</button>
-									</span>
-								</div>
-							</form>
-							<!-- /Newsletter Form -->
-
-
-						</div>
-						<!-- /col #2 -->
-
-					</div>
-
-
-				</div>
-
-				<div class="copyright">
-					<div class="container">
-						<ul class="float-right m-0 list-inline mobile-block">
-							<li><a href="#">Terms &amp; Conditions</a></li>
-							<li>&bull;</li>
-							<li><a href="#">Privacy</a></li>
-						</ul>
-						&copy; All Rights Reserved, Company LTD
-					</div>
-				</div>
-
-			</footer>
-			<!-- /FOOTER -->
+			<footer id="footer"></footer>
 
 		</div>
 		<!-- /wrapper -->
@@ -1333,7 +1109,6 @@
 
 		<!-- JAVASCRIPT FILES -->
 		<script>var plugin_path = 'assets/plugins/';</script>
-		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
 		<script src="assets/js/scripts.js"></script>
 		
 		<!-- REVOLUTION SLIDER -->
