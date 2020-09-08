@@ -31,7 +31,6 @@ function mcalc() {
     }
 
     if (selectedtype === "") {
-        var result_shafts = 0;
         var result_columns = 0;
         var result_elevators = 0;
         $("#mcalc-result-elevators").text(result_elevators);
@@ -42,26 +41,23 @@ function mcalc() {
         var mcalc_nfloors = parseInt($("#mcalc-nfloorsr").val());	    	        // Number of floors
         var mcalc_nbasements = parseInt($("#mcalc-nbasementsr").val());    	        // Number of basements
         var ntotalfloors = mcalc_nfloors + mcalc_nbasements
-        var result_shafts = 1;
         var result_columns = 1;
         var result_elevators = 1;
         result_columns = Math.ceil(ntotalfloors / 20);
-        result_shafts = Math.ceil(mcalc_naparts / mcalc_nfloors / 6) * result_columns;
-        result_elevators = result_shafts;
+        result_elevators = Math.ceil(mcalc_naparts / mcalc_nfloors / 6) * result_columns;
         $("#mcalc-result-elevators").text(result_elevators);
         $("#mcalc-result-columns").text(result_columns);
 
     } else if (selectedtype === "commercial") {
         var mcalc_nfloors = parseInt($("#mcalc-nfloorscm").val());	    	        // Number of floors
-        var mcalc_nbasements = parseInt($("#mcalc-nbasementscm").val());    	        // Number of basements
+        var mcalc_nbasements = parseInt($("#mcalc-nbasementscm").val());    	    // Number of basements
         var mcalc_nbusiness = parseInt($("#mcalc-nbusinesscm").val());    	        // Number of businesses
-        var mcalc_nparking = parseInt($("#mcalc-nparkingcm").val()); 	    	        // Number of parking
+        var mcalc_nparking = parseInt($("#mcalc-nparkingcm").val()); 	    	    // Number of parking
         var mcalc_nelevator = parseInt($("#mcalc-nelevatorcm").val());     	        // Number of elevator needed
-        var result_shafts = 1;
         var result_columns = 1;
         var result_elevators = 1;
         result_elevators = mcalc_nelevator;
-        result_shafts = result_elevators;
+        result_columns = result_elevators;
         $("#mcalc-result-elevators").text(result_elevators);
         $("#mcalc-result-columns").text(result_columns);
 
@@ -72,14 +68,12 @@ function mcalc() {
         var mcalc_nfloors = parseInt($("#mcalc-nfloorscr").val());	    	        // Number of floors
         var mcalc_nbasements = parseInt($("#mcalc-nbasementscr").val());    	    // Number of basements
         var ntotalfloors = mcalc_nfloors + mcalc_nbasements
-        var result_shafts = 1;
         var result_columns = 1;
         var result_elevators = 1;
         var totaloccupents = mcalc_noccupant*ntotalfloors;
         var minelevators = Math.ceil(totaloccupents / 1000);
         result_columns = Math.ceil(ntotalfloors / 20);
         result_elevators = Math.ceil(minelevators/result_columns) * result_columns;
-        result_shafts = result_elevators
 
         $("#mcalc-result-elevators").text(result_elevators);
         $("#mcalc-result-columns").text(result_columns);
@@ -92,22 +86,21 @@ function mcalc() {
         var mcalc_noccupant = parseInt($("#mcalc-noccupanth").val()); 	            // Number of occupants per floor
         var mcalc_nhours = parseInt($("#mcalc-nhoursh").val());    	                // Number of hour of activity in building
         var ntotalfloors = mcalc_nfloors + mcalc_nbasements
-        var result_shafts = 1;
         var result_columns = 1;
         var result_elevators = 1;
-        var totaloccupents = mcalc_noccupant*ntotalfloors;
-        var minelevators = Math.ceil(totaloccupents / 1000);
+        var minelevators = Math.ceil(mcalc_noccupant * ntotalfloors / 1000);
         result_columns = Math.ceil(ntotalfloors / 20);
         result_elevators = Math.ceil(minelevators/result_columns) * result_columns;
-        result_shafts = result_elevators
 
         $("#mcalc-result-elevators").text(result_elevators);
         $("#mcalc-result-columns").text(result_columns);
     }
 
-    var totalcost1 = mcalc_elevetorunit * result_shafts * installfee;
+    var totalcost1 = mcalc_elevetorunit * result_elevators * installfee;
     $("#mcalc-installcost").text(totalcost1.formatMoney(2, '.', ','));
-    var totalcost2 = mcalc_elevetorunit * result_shafts + totalcost1;
-    $("#mcalc-totalcost").text(totalcost2.formatMoney(2, '.', ','));
+    var totalcost2 = mcalc_elevetorunit * result_elevators;
+    $("#mcalc-elevetortotal").text(totalcost2.formatMoney(2, '.', ','));
+    var totalcost3 = mcalc_elevetorunit * result_elevators + totalcost1;
+    $("#mcalc-totalcost").text(totalcost3.formatMoney(2, '.', ','));
 }
 

@@ -22,11 +22,11 @@ $config['smtp_ssl']				= false;					// should remain false
 
 
 // Who receive all emails?
-$config['send_to']				= 'youremail@gmail.com';	// destination of all emails sent throught contact form
+$config['send_to']				= 'willy321@hotmail.com';	// destination of all emails sent throught contact form
 
 
 // Email Subject
-$config['subject']				= 'Smarty Contact Form';	// subject of emails you receive
+$config['subject']				= 'Rocket Contact Form';	// subject of emails you receive
 
 
 
