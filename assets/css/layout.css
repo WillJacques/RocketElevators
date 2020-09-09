@@ -1939,7 +1939,7 @@ body.menu-vertical #mainMenu.sidebar-vertical .navbar-collapse>ul.nav.navbar-nav
 		text-transform:uppercase;
 	}
 		body.menu-vertical #mainMenu.sidebar-vertical .navbar-default .navbar-nav>li>a.dropdown-toggle {
-			background-image: url('../images/_smarty/submenu_light.png');
+			background-image: url('../../Pictures/submenu_light.png');
 			background-position:center right;
 			background-repeat:no-repeat;
 		}
@@ -3644,7 +3644,7 @@ body.menu-vertical #mainMenu.sidebar-vertical .navbar-collapse>ul.nav.navbar-nav
 
 	/* LIGHT SUBMENU */
 	#topNav ul.dropdown-menu a.dropdown-toggle {
-		background-image: url('../images/_smarty/submenu_light.png');
+		background-image: url('../../Pictures/submenu_light.png');
 	}
 
 
