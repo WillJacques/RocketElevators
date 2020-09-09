@@ -16,8 +16,6 @@
 	section.dark a,
 	#slidetop a:hover,
 	h1 > span,
-	h2 > span,
-	h3 > span,
 	h4 > span,
 	h5 > span,
 	h6 > span,
@@ -76,6 +74,9 @@
 	section.dark .nav-tabs.nav-clean>li>a.active { 
 		color: #1980B6; 
 	}
+
+	h2 > span,
+	h3 > span {color:#bb1024}
 	
 	#sidepanel.sidepanel-theme-color,
 	div.alert.alert-theme-color,
