@@ -11628,10 +11628,10 @@ div.toggle.active > label:before {
 	background:transparent;
 }
 .toggle.toggle-transparent-body label {
-	background: rgba(0,0,0,0.03);
+	background: #1980B620;
 }
 .toggle.toggle-transparent-body label:hover {
-	background: rgba(0,0,0,0.04);
+	background: #1980B640;
 }
 
 /* transparent full */
