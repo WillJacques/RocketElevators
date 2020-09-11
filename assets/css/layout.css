@@ -2427,7 +2427,7 @@ body.menu-vertical #mainMenu.sidebar-vertical .navbar-collapse>ul.nav.navbar-nav
 			padding:0; margin:0;
 			font-size:21px;
 		}
-	@media only screen and (max-width: 992px) {
+	@media only screen and (max-width: 1200px) {
 		#topNav button.btn-mobile {
 			display:inline-block;
 		}
@@ -3360,7 +3360,7 @@ body.menu-vertical #mainMenu.sidebar-vertical .navbar-collapse>ul.nav.navbar-nav
 
 	/** Responsive Top Nav
 	 ********************* **/
-	@media only screen and (max-width: 992px) {
+	@media only screen and (max-width: 1200px) {
 		.navbar-collapse {
 			height:100%;
 		}
