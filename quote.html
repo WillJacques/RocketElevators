@@ -7,6 +7,9 @@
 		<meta name="description" content="" />
 		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
+		<!-- TEST JSNODE-->
+		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.751.0.min.js"></script>
+
 		<!-- JQUERY for header/footer -->
 		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
 		<script>
@@ -268,5 +271,18 @@
 
 		<!-- QUOTE SCRIPTS -->
 		<script src="assets/js/quote.js"></script>
+
+		<script>
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200) {
+					var response = JSON.parse(xhttp.responseText);
+					var commercial4 = response.COMMERCIAL[4]
+					console.log(commercial4)
+				}
+			};
+			xhttp.open("GET", "quote.json", true);
+			xhttp.send();
+		</script>
 	</body>
 </html>
