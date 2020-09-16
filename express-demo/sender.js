@@ -40,16 +40,16 @@ function mcalc1() {
         return;
     }
     if (selectedtype === "residential") {
-        var URL = `https://sender.wjacques.tech/api/quote/residential/${serviceline}/${mcalc_napartsre}/${mcalc_nfloorsre}/${mcalc_nbasementsre}`;
+        var URL = `https://wjacques.tech/api/quote/residential/${serviceline}/${mcalc_napartsre}/${mcalc_nfloorsre}/${mcalc_nbasementsre}`;
     };
     if (selectedtype === "commercial") {
-        var URL = `https://sender.wjacques.tech/api/quote/commercial/${serviceline}/${mcalc_nelevatorcm}`;
+        var URL = `https://wjacques.tech/api/quote/commercial/${serviceline}/${mcalc_nelevatorcm}`;
     };
     if (selectedtype === "corporate") {
-        var URL = `https://sender.wjacques.tech/api/quote/corporate/${serviceline}/${mcalc_nfloorscr}/${mcalc_nbasementscr}/${mcalc_noccupantcr}`;
+        var URL = `https://wjacques.tech/api/quote/corporate/${serviceline}/${mcalc_nfloorscr}/${mcalc_nbasementscr}/${mcalc_noccupantcr}`;
     };
     if (selectedtype === "hybrid") {
-        var URL = `https://sender.wjacques.tech/api/quote/hybrid/${serviceline}/${mcalc_nfloorshy}/${mcalc_nbasementshy}/${mcalc_noccupanthy}`;
+        var URL = `https://wjacques.tech/api/quote/hybrid/${serviceline}/${mcalc_nfloorshy}/${mcalc_nbasementshy}/${mcalc_noccupanthy}`;
     };
     console.log(URL);
 
