@@ -121,7 +121,7 @@
 
 								<div id="commercial" style= "display:none" class="building_type">
 									<label class="fs-6">NUMBER OF DISTINCT BUSINESSES </label>
-									<input id="mcalc-nbusinesscm" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
+									<input id="mcalc-nbusinesscm" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="1" class="form-control" value="1">
 
 									<label class="fs-6">NUMBER OF FLOORS</label>
 									<input id="mcalc-nfloorscm" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="1" class="form-control" value="1">
@@ -130,7 +130,7 @@
 									<input id="mcalc-nbasementscm" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="1" class="form-control" value="1">
 
 									<label class="fs-6">NUMBER OF PARKING SPACES AVAILABLE</label>
-									<input id="mcalc-nparkingcm" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
+									<input id="mcalc-nparkingcm" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="1" class="form-control" value="1">
 
 									<label class="fs-6">NUMBER OF ELEVATOR CAGES TO BE DEPLOYED</label>
 									<input id="mcalc-nelevatorcm" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="1" class="form-control" value="1">
@@ -139,7 +139,7 @@
 
 								<div id="corporate" style= "display:none" class="building_type">
 									<label class="fs-6">NUMBER OF SEPARATE TENANT COMPAGNIES</label>
-									<input id="mcalc-ntenantcr" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
+									<input id="mcalc-ntenantcr" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="1" class="form-control" value="1">
 
 									<label class="fs-6">NUMBER OF FLOORS</label>
 									<input id="mcalc-nfloorscr" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="1" class="form-control" value="1">
@@ -148,16 +148,16 @@
 									<input id="mcalc-nbasementscr" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="1" class="form-control" value="1">
 
 									<label class="fs-6">NUMBER OF PARKING SPACES AVAILABLE</label>
-									<input id="mcalc-nparkingcr" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
+									<input id="mcalc-nparkingcr" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="1" class="form-control" value="1">
 
 									<label class="fs-6">MAXIMUM NUMBER OF OCCUPANTS PER FLOOR</label>
-									<input id="mcalc-noccupantcr" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
+									<input id="mcalc-noccupantcr" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="1" class="form-control" value="1">
 									<hr>
 								</div>
 
 								<div id="hybrid" style= "display:none" class="building_type">
 									<label class="fs-6">NUMBER OF DISTINCT BUSINESSES</label>
-									<input id="mcalc-nbusinessh" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
+									<input id="mcalc-nbusinessh" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="1" class="form-control" value="1">
 
 									<label class="fs-6">NUMBER OF FLOORS</label>
 									<input id="mcalc-nfloorsh" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="1" class="form-control" value="1">
@@ -166,10 +166,10 @@
 									<input id="mcalc-nbasementsh" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="1" class="form-control" value="1">
 
 									<label class="fs-6">NUMBER OF PARKING SPACES AVAILABLE</label>
-									<input id="mcalc-nparkingh" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
+									<input id="mcalc-nparkingh" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="1" class="form-control" value="1">
 
 									<label class="fs-6">MAXIMUM NUMBER OF OCCUPANTS PER FLOOR</label>
-									<input id="mcalc-noccupanth" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="0" class="form-control" value="1">
+									<input id="mcalc-noccupanth" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="1" class="form-control" value="1">
 
 									<label class="fs-6">NUMBER OF HOURS OF ACTIVITY OF THE BUILDING</label>
 									<input id="mcalc-nhoursh" type="number" oninput="this.value=(parseInt(this.value)||0)" placeholder="0-9" min="1" max="24" class="form-control" value="1">
@@ -267,6 +267,14 @@
 		<script src="assets/js/contact.js"></script>
 
 		<!-- QUOTE SCRIPTS -->
-		<script src="assets/js/quote.js"></script>
+		<script>
+		$(document).ready(function () {
+			$('#selectMe').change(function () {
+				$('.building_type').hide();
+				$('#' + $(this).val()).show();
+			})
+		});
+		</script>
+		<script src="express-demo/sender.js"></script>
 	</body>
 </html>

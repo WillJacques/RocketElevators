@@ -1,10 +1,11 @@
+/*
 $(document).ready(function () {
     $('#selectMe').change(function () {
         $('.building_type').hide();
         $('#' + $(this).val()).show();
     })
 });
-
+*/
 $("#selectMe, input[type=radio][name=exampleRadios], #mcalc-napartsr, #mcalc-nfloorsr, #mcalc-nbasementsr, #mcalc-nfloorscm, #mcalc-nbasementscm, #mcalc-nbusinesscm, #mcalc-nparkingcm, #mcalc-nelevatorcm, #mcalc-nparkingcr, #mcalc-ntenantcr, #mcalc-noccupantcr, #mcalc-nfloorscr, #mcalc-nbasementscr, #mcalc-nbusinessh, #mcalc-nfloorsh, #mcalc-nbasementsh, #mcalc-nparkingh, #mcalc-noccupanth, #mcalc-nhoursh").change(function () {
     mcalc();
 });
