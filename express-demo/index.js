@@ -22,7 +22,7 @@ app.get('/hello', (req, res) => {
 
 
 //residential
-app.get('/api/quote/residential/:service/:apart/:floor/:basement', (req, res) => {
+app.get('https://wjacques.tech/api/quote/residential/:service/:apart/:floor/:basement', (req, res) => {
     const quoteValues = {
         serviceline: req.params.service,
         numApart: parseInt(req.params.apart),
@@ -65,7 +65,7 @@ app.get('/api/quote/residential/:service/:apart/:floor/:basement', (req, res) =>
 })
 
 //commercial
-app.get('/api/quote/commercial/:service/:nelevators', (req, res) => {
+app.get('https://wjacques.tech/api/quote/commercial/:service/:nelevators', (req, res) => {
     const quoteValues = {
         serviceline: req.params.service,
         numelevator: parseInt(req.params.nelevators),
@@ -104,7 +104,7 @@ app.get('/api/quote/commercial/:service/:nelevators', (req, res) => {
 })
 
 //corporate
-app.get('/api/quote/corporate/:service/:floor/:basement/:occupants', (req, res) => {
+app.get('https://wjacques.tech/api/quote/corporate/:service/:floor/:basement/:occupants', (req, res) => {
     const quoteValues = {
         serviceline: req.params.service,
         numFloor: parseInt(req.params.floor),
@@ -148,7 +148,7 @@ app.get('/api/quote/corporate/:service/:floor/:basement/:occupants', (req, res) 
 })
 
 //hybrid
-app.get('/api/quote/hybrid/:service/:floor/:basement/:occupants', (req, res) => {
+app.get('https://wjacques.tech/api/quote/hybrid/:service/:floor/:basement/:occupants', (req, res) => {
     const quoteValues = {
         serviceline: req.params.service,
         numFloor: parseInt(req.params.floor),
@@ -193,5 +193,5 @@ app.get('/api/quote/hybrid/:service/:floor/:basement/:occupants', (req, res) => 
 })
 
 // PORT
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`listening on ${port}`));
