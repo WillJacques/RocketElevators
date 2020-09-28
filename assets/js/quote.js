@@ -6,11 +6,11 @@ $(document).ready(function () {
     })
 });
 
-$("input[type=radio][name=exampleRadios]").change(function () {
+$("#selectMe, input[type=radio][name=exampleRadios], #mcalc-napartsr, #mcalc-nfloorsr, #mcalc-nbasementsr, #mcalc-nfloorscm, #mcalc-nbasementscm, #mcalc-nbusinesscm, #mcalc-nparkingcm, #mcalc-nelevatorcm, #mcalc-nparkingcr, #mcalc-ntenantcr, #mcalc-noccupantcr, #mcalc-nfloorscr, #mcalc-nbasementscr, #mcalc-nbusinessh, #mcalc-nfloorsh, #mcalc-nbasementsh, #mcalc-nparkingh, #mcalc-noccupanth, #mcalc-nhoursh").change(function () {
     mcalc();
 });
 
-$("#selectMe, #mcalc-napartsr, #mcalc-nfloorsr, #mcalc-nbasementsr, #mcalc-nfloorscm, #mcalc-nbasementscm, #mcalc-nbusinesscm, #mcalc-nparkingcm, #mcalc-nelevatorcm, #mcalc-nparkingcr, #mcalc-ntenantcr, #mcalc-noccupantcr, #mcalc-nfloorscr, #mcalc-nbasementscr, #mcalc-nbusinessh, #mcalc-nfloorsh, #mcalc-nbasementsh, #mcalc-nparkingh, #mcalc-noccupanth, #mcalc-nhoursh").keyup(function () {
+$("#mcalc-napartsr, #mcalc-nfloorsr, #mcalc-nbasementsr, #mcalc-nfloorscm, #mcalc-nbasementscm, #mcalc-nbusinesscm, #mcalc-nparkingcm, #mcalc-nelevatorcm, #mcalc-nparkingcr, #mcalc-ntenantcr, #mcalc-noccupantcr, #mcalc-nfloorscr, #mcalc-nbasementscr, #mcalc-nbusinessh, #mcalc-nfloorsh, #mcalc-nbasementsh, #mcalc-nparkingh, #mcalc-noccupanth, #mcalc-nhoursh").keyup(function () {
     mcalc();
 });
 
@@ -19,7 +19,7 @@ function mcalc() {
     var serviceline = $('input[name="exampleRadios"]:checked').val();	        // Service Line
     var installfee = 0.1;
     var totalcost = 0;
-    var mcalc_elevetorunit = 7565;
+    var mcalc_elevetorunit = 0;
 
     if (serviceline === "standard") {
         mcalc_elevetorunit = 7565;
