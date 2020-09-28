@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     $('#selectMe').change(function () {
         $('.building_type').hide();
@@ -37,7 +38,7 @@ function mcalc() {
     if (selectedtype === "") {
         var result_columns = 0;
         var result_elevators = 0;
-        
+
         $("#mcalc-result-elevators").text(result_elevators);
         $("#mcalc-result-columns").text(result_columns);
 
