@@ -5,7 +5,11 @@ $(document).ready(function () {
     })
 });
 
-$("#selectMe, input[type=radio][name=exampleRadios], #mcalc-napartsr, #mcalc-nfloorsr, #mcalc-nbasementsr, #mcalc-nfloorscm, #mcalc-nbasementscm, #mcalc-nbusinesscm, #mcalc-nparkingcm, #mcalc-nelevatorcm, #mcalc-nparkingcr, #mcalc-ntenantcr, #mcalc-noccupantcr, #mcalc-nfloorscr, #mcalc-nbasementscr, #mcalc-nbusinessh, #mcalc-nfloorsh, #mcalc-nbasementsh, #mcalc-nparkingh, #mcalc-noccupanth, #mcalc-nhoursh").change(function () {
+$("input[type=radio][name=exampleRadios]").change(function () {
+    mcalc();
+});
+
+$("#selectMe, #mcalc-napartsr, #mcalc-nfloorsr, #mcalc-nbasementsr, #mcalc-nfloorscm, #mcalc-nbasementscm, #mcalc-nbusinesscm, #mcalc-nparkingcm, #mcalc-nelevatorcm, #mcalc-nparkingcr, #mcalc-ntenantcr, #mcalc-noccupantcr, #mcalc-nfloorscr, #mcalc-nbasementscr, #mcalc-nbusinessh, #mcalc-nfloorsh, #mcalc-nbasementsh, #mcalc-nparkingh, #mcalc-noccupanth, #mcalc-nhoursh").keyup(function () {
     mcalc();
 });
 
@@ -33,6 +37,7 @@ function mcalc() {
     if (selectedtype === "") {
         var result_columns = 0;
         var result_elevators = 0;
+        
         $("#mcalc-result-elevators").text(result_elevators);
         $("#mcalc-result-columns").text(result_columns);
 
@@ -45,6 +50,7 @@ function mcalc() {
         var result_elevators = 1;
         result_columns = Math.ceil(ntotalfloors / 20);
         result_elevators = Math.ceil(mcalc_naparts / mcalc_nfloors / 6) * result_columns;
+
         $("#mcalc-result-elevators").text(result_elevators);
         $("#mcalc-result-columns").text(result_columns);
 
@@ -58,6 +64,7 @@ function mcalc() {
         var result_elevators = 1;
         result_elevators = mcalc_nelevator;
         result_columns = result_elevators;
+
         $("#mcalc-result-elevators").text(result_elevators);
         $("#mcalc-result-columns").text(result_columns);
 
